@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300,300i,500,500i");
+@media only screen and (max-width: 500px) {
+
+   body { font-size: 125%; }
+
+}
+/*
+ =====================================================
+
+   _____                                _    _ _  __
+  / ____|                              | |  | | |/ /
+ | (___  _ __   ___  _ __   __ _  ___  | |  | | ' /
+  \___ \| '_ \ / _ \| '_ \ / _` |/ _ \ | |  | |  <
+  ____) | |_) | (_) | | | | (_| |  __/ | |__| | . \
+ |_____/| .__/ \___/|_| |_|\__, |\___|  \____/|_|\_\
+        | |                 __/ |
+        |_|                |___/
+
+=====================================================
+ SPONGE UK DEVELOPER TEST
+ Main CSS
+=====================================================
+*/
+body {
+  min-width: 320px;
+  font-family: "Roboto", serif;
+  color: #212D35;
+  font-weight: 300;
+}
+
+#header-wrapper {
+  position: relative;
+  background: #F9423A;
+  z-index: 2;
+}
+
+#header {
+  padding-top: 60px;
+  padding-bottom: 45px;
+  color: #FFF;
+}
+#header img {
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: auto;
+  display: block;
+}
+#header h1 {
+  color: #FFF;
+}
+#header + p {
+  font-size: 1.8em;
+}
+
+#content {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#content ol {
+  position: relative;
+  margin-bottom: 2px;
+}
+
+button.accordion {
+  position: relative;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 18px;
+  width: 55%;
+  text-align: center;
+  font-family: "Roboto", serif;
+  font-size: 15px;
+  color: #F9423A;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+button.accordion.active, button.accordion:hover {
+  background-color: #ddd;
+}
+
+div.panel {
+  background-color: white;
+  display: none;
+  margin-top: 10px;
+}
+
+#tasks {
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  position: relative;
+  background-color: #F2F2F2;
+  counter-reset: tasks;
+  z-index: 1;
+}
+#tasks article {
+  counter-increment: tasks;
+}
+#tasks h5 {
+  color: #F9423A;
+}
+#tasks::before {
+  min-width: 0.75em;
+  padding-right: 0.5em;
+  display: inline-block;
+  color: #212D35;
+  font-weight: 300;
+  vertical-align: text-bottom;
+  content: counter(tasks) ".";
+}
+#tasks .difficulty {
+  margin-left: 1.5em;
+  display: inline-block;
+  float: right;
+  color: #FFB400;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+#tasks .fa {
+  margin-left: 0.1em;
+}
+#tasks .fa-star-o {
+  color: #7E7772;
+}
+
+#footer-wrapper {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  position: relative;
+  color: #FFF;
+  background-color: #212D35;
+  z-index: 2;
+}
+
+#footer a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #F9423A;
+}
+
+p,
+ul,
+ol {
+  font-size: 1.5em;
+}
+
+p code,
+li code {
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  line-height: 1.35;
+  vertical-align: baseline;
+  font-size: 0.9em;
+  background-color: #D4D4D4;
+  outline: none;
+}
+
+code,
+pre {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 500;
+}
+
+/**
+ * Styles to make the boxes actually visible to start
+ */
+#boxes {
+  padding: 40px;
+  color: white;
+  font-size: 1.5em;
+}
+
+#box-left {
+	max-width: 50%;
+	width: 210px;
+	position: relative;
+	bottom: 100px;
+	height: 50px;
+}
+
+#box-left::after{
+	content: "";
+	display: block;
+	padding-right: 21%;
+}
+
+#box-right{
+	width: 50%;
+	position: relative;
+	text-align: center;
+	margin-left: 50%;
+}
+
+#box-right::after{
+	padding-bottom: 90%;
+	display: block;
+	content: "";
+}
+
+/*# sourceMappingURL=spongetest.css.map */

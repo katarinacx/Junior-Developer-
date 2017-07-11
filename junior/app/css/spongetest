@@ -15,124 +15,143 @@
 
 =====================================================
  SPONGE UK DEVELOPER TEST
- Main CSS
+ Main SASS
 =====================================================
 */
+$font-family: "Roboto", serif;
+$title-colour: #FFF;
+$mainred-colour: #F9423A;
+$mainblack-colour: #212D35;
+$position: relative;
+$star-colour: #FFB400;
 
 body {
   min-width: 320px;
-
-  font-family: "Roboto", serif;
-  color: #212D35;
+  font-family: $font-family; 
+  color: $mainblack-colour;
   font-weight: 300;
 }
 
 #header-wrapper {
-  position: relative;
-
-  background: #F9423A;
-
+  position: $position;
+  background: $mainred-colour;
   z-index: 2;
 }
 
   #header {
     padding-top: 60px;
     padding-bottom: 45px;
+    color: $title-colour;
 
-    color: #FFF;
-  }
-
-  #header img {
+    img{
     margin-right: auto;
     margin-bottom: 30px;
     margin-left: auto;
-
     display: block;
+    }
+
+    h1 {
+    color: $title-colour;
   }
 
-  #header h1 {
-    color: #FFF;
-  }
-
-  #header h1 + p {
+  + p {
     font-size: 1.8em;
   }
-
-#content {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
-  #content img{
-    width: 100%;
+
+#content {
+  position: $position;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  ol{
+    position: $position;
+    margin-bottom: 2px;
   }
+
+}
+
+button.accordion{
+	position: $position;
+	background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 18px;
+    width: 55%;
+    text-align: center;
+    font-family: $font-family;
+    font-size: 15px;
+    color: $mainred-colour;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+
+    &.active, &:hover{
+      background-color: #ddd;
+    }
+}
+
+
+div.panel {
+    background-color: white;
+    display: none;
+    margin-top: 10px;
+}
 
 #tasks {
   padding-top: 30px;
   padding-right: 20px;
   padding-bottom: 50px;
   padding-left: 20px;
-
-  position: relative;
-
+  position: $position;
   background-color: #F2F2F2;
-
   counter-reset: tasks;
-
   z-index: 1;
-}
 
-  #tasks article {
+  article {
     counter-increment: tasks;
   }
-
-    #tasks article h5 {
-      color: #F9423A;
+    h5 {
+      color: $mainred-colour;
     }
 
-    #tasks article h5::before {
+    &::before{
       min-width: 0.75em;
       padding-right: 0.5em;
-
       display: inline-block;
-
-      color: #212D35;
+      color: $mainblack-colour;
       font-weight: 300;
       vertical-align: text-bottom;
-
       content: counter(tasks) ".";
     }
 
-    #tasks article h5 .difficulty {
+    .difficulty{
       margin-left: 1.5em;
-
       display: inline-block;
-
       float: right;
-
-      color: #FFB400;
+      color: $star-colour;
       font-size: 0.8em;
       white-space: nowrap;
     }
 
-      #tasks article h5 .difficulty .fa {
-        margin-left: 0.1em;
-      }
+    .fa{
+      margin-left: 0.1em;
+    }
 
-      #tasks article h5 .difficulty .fa-star-o {
-        color: #7E7772;
-      }
+    .fa-star-o{
+      color: $mainblack-colour;
+    }
+}
+
 
 #footer-wrapper {
   padding-top: 30px;
   padding-bottom: 10px;
-
-  position: relative;
-
-  color: #FFF;
-
-  background-color: #212D35;
-
+  position: $position;
+  color: $title-colour;
+  background-color: $mainblack-colour;
   z-index: 2;
 }
 
@@ -154,7 +173,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #F9423A;
+  color: $mainred-colour;
 }
 
 p,
@@ -167,13 +186,10 @@ ol {
   li code {
     padding-right: 0.2em;
     padding-left: 0.2em;
-
     line-height: 1.35;
     vertical-align: baseline;
     font-size: 0.9em;
-
     background-color: #D4D4D4;
-
     outline: none;
   }
 
@@ -194,10 +210,6 @@ strong {
   padding: 40px;
 }
 
-#box-left {
-  height: 50px;
-}
-
-#box-right {
+#box-left, #box-right {
   height: 50px;
 }

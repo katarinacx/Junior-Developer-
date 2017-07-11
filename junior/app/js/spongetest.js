@@ -15,6 +15,7 @@
  Page-specific JS
 =====================================================
 */
+import {ContentInstance} from 'app/js/content';
 
 jQuery(
 		function( $ ) {
@@ -37,36 +38,61 @@ jQuery(
 			/**
 			 * Populate the tasks
 			 */
-			var populateTasks = function() {
+			/*var populateTasks = function() {
 				var strTaskSource = $( '#task-template' ).html(),
 						resTasksTemplate = Handlebars.compile( strTaskSource ),
 						strTasksHTML = resTasksTemplate( resContent.getItem( 'tasks' ) );
 
 				$( '#tasks' ).append( strTasksHTML );
-			};
+			};*/
 
 			/**
 			 * Populate the content
 			 */
-			var populateContent = function() {
+			/*var populateContent = function() {
 				var strContentSource = $( '#content-template' ).html(),
-						resContentTemplate = Handlebars.compile( strContentSource ),
+						resContentTemplate = Handlebars.compile( strContentSource );
 						strContentHTML = resContentTemplate( resContent.getItem( 'content' ) );
+						
 
 				$( '#content' ).append( strContentHTML );
 			};
 
 			/**
-			 * Populate the documentation links
+			 * Populate the PROFILE
 			 */
-			var populateDocumentation = function() {
-				var strContentSource = $( '#documentation-template' ).html(),
-						resContentTemplate = Handlebars.compile( strContentSource ),
-						strContentHTML = resContentTemplate( resContent.getItem( 'docs' ) );
-
-				$( '#documentation' ).append( strContentHTML );
+			/*var populateProfile = function() {
+				var strContentSource = $( '#profile-template' ).html(),
+						resContentTemplate = Handlebars.compile( strContentSource );
+						strContentHTML = resContentTemplate( resContent.getItem( 'profile' ) );
+						
+				$( '#profile' ).append( strContentHTML );
 			};
 
+			/**
+			 * Populate the documentation links
+			 */
+			/*var populateDocumentation = function() {
+				var strContentSource = $( '#documentation-template').html(),
+						resContentTemplate = Handlebars.compile( strContentSource );
+						strContentHTML = resContentTemplate( resContent.getItem( 'docs') );
+						
+				$( '#documentation' ).append( strContentHTML );
+			};*/
+
+			/*strContentSource = finding where in the HTML the template is and recording it as variable
+			  resContentTemplate = compiling it as a handlebars object
+			  strContentHTML = using the template on the previous line, using the json item you give it. 
+			  Find wherever the target it and add the generated */
+
+			var populateFunction = function(template, item, htmlId){
+				var strContentSource = $( template ).html(),
+						resContentTemplate = Handlebars.compile( strContentSource ),
+						strContentHTML = resContentTemplate( resContent.getItem(item) );
+						
+				$( htmlId ).append( strContentHTML );	
+			};
+			
 			/**
 			 * Register a Handlebars helper for the difficulty stars
 			 */
@@ -85,16 +111,21 @@ jQuery(
 						return strHTMLStarsOut;
 					}
 			);
-
 			/**
 			 * When the content file is ready, actually populate the content
 			 */
 			resContent.onReady(
 					function() {
+
 						populateHeader();
-						populateTasks();
-						populateContent();
-						populateDocumentation();
+						//populateTasks();
+						//populateContent();
+						//populateProfile();
+						//populateDocumentation();
+						populateFunction('#profile-template', 'profile', '#profile'); 
+						populateFunction('#content-template', 'content', '#content');
+						populateFunction('#documentation-template', 'docs', '#documentation') 
+						populateFunction('#task-template', 'tasks', '#tasks');	
 					}
 			);
 		}

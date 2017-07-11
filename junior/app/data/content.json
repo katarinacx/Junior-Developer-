@@ -1,14 +1,15 @@
 {
   "header": {
-    "title": "Sponge UK Developer Test",
+    "title": "<i>Sponge UK</i> Developer Test",
     "subtitle": "May the force be with you",
-    "myname": "<i>Katarina Chance</i>"
+    "myname": "Katarina Chance"
   },
+
   "content": {
-    "title": "Welcome!",
-    "body": "<p>Please carefully read the instructions on the right and work through as many of the tasks as you can.</p><p>For this test, you will need:</p><ul><li>An IDE of your choice (e.g. Sublime Text)</li><li>A copy of Microsoft Word (for opening the example text - you may be able to use Google Docs instead)</li></ul><p>Links to any documentation you may need are in the footer of this page.</p><p><em><strong>It is always better to submit something broken than nothing at all.</strong> Document any issues you had and include them in your submission.</em></p>",
-    "task": {
-      "markup": "<div id=\"boxes\" style=\"background-color: #7B0051;\"><div id=\"box-right\" style=\"background-color: #FC6E8D;\"></div><div id=\"box-left\" style=\"background-color: #FFB400;\"></div></div>",
+    "title": "HTML",
+    "body": "<p><strong>HyperText Markup Langage</strong>, commonly referred to as <strong>HTML</strong>, is the standard markup language used to create web pages. Along with <a href=https://en.wikipedia.org/wiki/Cascading_Style_Sheets >CSS</a>, & <a href=https://en.wikipedia.org/wiki/JavaScript >JavaScript</a>, html is a cornerstone technology, used by most websites to create visually engaging web pages,user interfaces for  web aplications, and user interfaces for many moblie applications. <p>The W3C recommends several conventions to ensure an easy migration between HTML and XHTML (see <a href=https://www.w3.org/TR/xhtml1/#guidelines >HTML Compatibility Guidelines</a>). The following step can be applied to XHMTL 1.0 documents only: </p><ol><li>Include <span style=font-family:calibri>both xml:lang and lang attributes</span> on any elements assigning language.</li><li>Use the empty-element syntax only for elements specified as empty in HTML</li><li><span style=font-family:cursive>Include an extra space in empty-element tags: for example &lt;br /&gt instead of &lt;br/&gt .</span></li><li>Include explicit close tags for elements that permit content but are left empty (for <span style=font-family:calibri>example, &lt;div&gt&lt;/div&gt, not &lt;div /&gt)</span></li></ol><ul><li>Omit the XML declaration.</li></ul><p><span style=font-family:calibri><b>HTML5</></span></b> is a mark up language used for  structuring and presenting consent on the <a href=https://en.wikipedia.org/wiki/World_Wide_Web >World Wide Web</a>. It was finalized, and published, on 28 October 3014 by the World Wide Web Consortium (W3C). This is the fifth revision of the <a href=https://en.wikipedia.org/wiki/HTML >HTML</a> standard since the inception of the World Wide web.</p>",
+  "task": {
+      "markup": "<div id=\"boxes\" style=\"background-color: #7B0051;\">Wrapper<div id=\"box-right\" style=\"background-color: #FC6E8D;\">Right</div><div id=\"box-left\" style=\"background-color: #FFB400;\">Left</div></div>",
       "references": {
         "images": [
           {
@@ -31,7 +32,19 @@
         "video": "./resources/box-reference-responsive.mp4"
       }
     }
+},
+
+
+  "profile": {
+    "about": "<p>Hello, my name is Katarina Chance but a lot of people call me <b>Tarin</b> I am a recent graduate in Computer Gaming Technology. I studied at Anglia Ruskin University achieving a first overall. I like surfing and going on nature walks, I also like playing games and seeing my friends.</p>",
+    "picture": "<img src=\"app/images/me.jpg\" style=width:400px;height:400px />",
+    "portfolio1": "<p>This is my dropbox and plunker. The dropbox link includes:</p><ul><li>Dissertation: I created a website for users to click test a wireframe design. JavaScript, HTML, CSS, PHP, SQL</li><li>UI Design for an App: I created a high-fidelity wireframe for young carers looking after parents or guardians with disabilities.</li><li>This is the plunker link: Mobile Technology: A fruit game where players need to catch falling fruit in a basket. JavaScript, HTML, CSS</li><li>Alice Game: This is a narrative point and click game, Alice will need to find her way out of the dreaded grave to escape Zombieland. C#</li><li>Skateboard game: This involved using a different technology, like the leap motion controller to make a game. C#</li></ul>",
+    "portfolio2": "<p>This is a group game. I created the menu UI and the items. I also did scripting for the menu and the audio throughout the menu. My contribution to this game was the UI and design.</p>",
+    "portfolio3": "<p>These two links, Youtube and Blogspot, are related. I created a 3D star wars animation in which I also needed to write down weekly what I had done.</p>"
   },
+
+  
+
   "tasks": {
     "test": [
       {

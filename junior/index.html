@@ -27,14 +27,20 @@
 </div>
 <div class="grid-container">
   <section class="grid-50">
+
+
     <!-- INSERT YOUR "ABOUT ME" SECTION HERE -->
-    <article id="content"></article>
-    <noscript>
-      <h1>You must enable JavaScript in order to view this page.</h1>
-    </noscript>
+    <article id="content">
+    <!--NEEDED TO CALL THE HTML ELEMENT FROM THE JS SCRIPT, NAMED PROFILE-->
+    <div id="profile"></div>
+    </article>
+
+ 
   </section>
   <aside id="tasks" class="grid-45 prefix-5"></aside>
 </div>
+
+<!--Footer-->
 <div id="footer-wrapper">
   <footer id="footer" class="grid-container">
     <div class="grid-100">
@@ -48,7 +54,7 @@
 <!-- Header Handlebars template -->
 <script id="header-template" type="text/x-handlebars-template">
   <div class="grid-60">
-    <h1 class="no-top-padding no-bottom-padding">{{title}}</h1>
+    <h1 class="no-top-padding no-bottom-padding">{{{title}}}</h1>
     <p>{{subtitle}}</p>
   </div>
   <div class="grid-40 align-right">
@@ -59,7 +65,7 @@
 <!-- Task item Handlebars template -->
 <script id="task-template" type="text/x-handlebars-template">
   {{#each test}}
-  <h4 class="no-bottom-padding">{{title}}</h4>
+  <h4 class="no-bottom-padding">{{{title}}}</h4>
   {{#each tasks}}
   <article>
     <h5 class="no-bottom-padding">{{#if stars}}<span class="difficulty">{{{difficulty stars}}}</span>{{/if}}{{title}}</h5>
@@ -70,11 +76,59 @@
   {{/each}} {{/each}}
 </script>
 
+<!--PROFILE TEMPLATE-->
+<script id="profile-template" type="text/x-handlebars-template">
+ <button class="accordion">About Me</button>
+    <div class="panel">
+    {{{about}}} <!--From the JSON file-->
+    </div>
+ <button class="accordion">Picture</button>
+    <div class="panel">
+    {{{picture}}} <!--From the JSON file-->
+    <!--Could have done the portfolio link pictures the same as the Json profile picture but HTML was quicker.-->
+    </div>
+ <button class="accordion">Portfolio Links</button>
+    <div class="panel">
+    <a href="https://www.dropbox.com/sh/159155b7a0jvzln/AADsN7isuddICrFrw9HKkJBCa?dl=0"><img src="app/images/dropbox.png" id="dropbox" width="50px" height="50px"></a>
+    <a href="https://plnkr.co/edit/vVxcxo"><img src="app/images/plunker.png" width="55px" height="55px" id="plunker"></a>
+    {{{portfolio1}}} <!--From the JSON file-->
+    <p><a href="http://gamejolt.com/games/wittershale/229956"><img src="app/images/gamejolt.png" width="180" height="20" id="gamejolt"></a></p>
+    {{{portfolio2}}} <!--From the JSON file-->
+    <p><a href="http://katarinacx.blogspot.co.uk/"><img src="app/images/blogspot.png" width="60" height="60" id="blogspot"></a><a href="https://www.youtube.com/watch?v=E1GNLLlweJw"><img src="app/images/youtube.png" width="50" height="50" id="youtube"></a></p>
+    {{{portfolio3}}} <!--From the JSON file-->
+    </div>
+
+    	<!--SCRIPT FOR CHANGING THE TABS-->
+        <script type="text/javascript"> //Tells the script that its javascript and not HTML
+      var acc = document.getElementsByClassName("accordion");
+	  var i;
+/*Going through the array of the accordion*/
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+        /*Accesses an elements list of classes*/
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        /*Returns the element immediately following the specified element*/
+        /*If the panel element style display is set to block set it to none, else set it to block*/
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+</script> 
+</script>
+
 <!-- Main content Handlebars template -->
 <script id="content-template" type="text/x-handlebars-template">
-  <h2>{{title}}</h2>
-  {{{body}}}
-  {{#with task}}
+  <h2>{{{title}}}</h2>
+  {{{body}}}	
+    {{#with task}}
     <h3>Boxes test</h3>
     {{{markup}}}
     <h4>Boxes test references</h4>
@@ -107,6 +161,7 @@
 
 <!-- The JS for this page -->
 <script src="app/js/spongetest.js"></script>
+
 
 <!--
   =====================================================

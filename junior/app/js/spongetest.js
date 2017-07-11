@@ -15,7 +15,6 @@
  Page-specific JS
 =====================================================
 */
-import {ContentInstance} from 'app/js/content';
 
 jQuery(
 		function( $ ) {

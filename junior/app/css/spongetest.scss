@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300,300i,500,500i");
 
 /*
@@ -15,28 +15,33 @@
 
 =====================================================
  SPONGE UK DEVELOPER TEST
- Main CSS
+ Main SASS
 =====================================================
 */
 $font-family: "Roboto", serif;
+$title-colour: #FFF;
+$mainred-colour: #F9423A;
+$mainblack-colour: #212D35;
+$position: relative;
+$star-colour: #FFB400;
 
 body {
   min-width: 320px;
   font-family: $font-family; 
-  color: #212D35;
+  color: $mainblack-colour;
   font-weight: 300;
 }
 
 #header-wrapper {
-  position: relative;
-  background: #F9423A;
+  position: $position;
+  background: $mainred-colour;
   z-index: 2;
 }
 
   #header {
     padding-top: 60px;
     padding-bottom: 45px;
-    color: #FFF;
+    color: $title-colour;
 
     img{
     margin-right: auto;
@@ -46,7 +51,7 @@ body {
     }
 
     h1 {
-    color: #FFF;
+    color: $title-colour;
   }
 
   + p {
@@ -56,18 +61,19 @@ body {
 
 
 #content {
-  position: relative;
+  position: $position;
   padding-top: 30px;
   padding-bottom: 30px;
 
   ol{
-    position: relative;
+    position: $position;
     margin-bottom: 2px;
   }
+
 }
 
 button.accordion{
-	position: relative;
+	position: $position;
 	background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -77,7 +83,7 @@ button.accordion{
     text-align: center;
     font-family: $font-family;
     font-size: 15px;
-    color: #F9423A;
+    color: $mainred-colour;
     border: none;
     outline: none;
     transition: 0.4s;
@@ -99,7 +105,7 @@ div.panel {
   padding-right: 20px;
   padding-bottom: 50px;
   padding-left: 20px;
-  position: relative;
+  position: $position;
   background-color: #F2F2F2;
   counter-reset: tasks;
   z-index: 1;
@@ -108,30 +114,24 @@ div.panel {
     counter-increment: tasks;
   }
     h5 {
-      color: #F9423A;
+      color: $mainred-colour;
     }
 
     &::before{
-          min-width: 0.75em;
+      min-width: 0.75em;
       padding-right: 0.5em;
-
       display: inline-block;
-
-      color: #212D35;
+      color: $mainblack-colour;
       font-weight: 300;
       vertical-align: text-bottom;
-
       content: counter(tasks) ".";
     }
 
     .difficulty{
-        margin-left: 1.5em;
-
+      margin-left: 1.5em;
       display: inline-block;
-
       float: right;
-
-      color: #FFB400;
+      color: $star-colour;
       font-size: 0.8em;
       white-space: nowrap;
     }
@@ -141,7 +141,7 @@ div.panel {
     }
 
     .fa-star-o{
-      color: #7E7772;
+      color: $mainblack-colour;
     }
 }
 
@@ -149,13 +149,9 @@ div.panel {
 #footer-wrapper {
   padding-top: 30px;
   padding-bottom: 10px;
-
-  position: relative;
-
-  color: #FFF;
-
-  background-color: #212D35;
-
+  position: $position;
+  color: $title-colour;
+  background-color: $mainblack-colour;
   z-index: 2;
 }
 
@@ -177,7 +173,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #F9423A;
+  color: $mainred-colour;
 }
 
 p,
@@ -190,13 +186,10 @@ ol {
   li code {
     padding-right: 0.2em;
     padding-left: 0.2em;
-
     line-height: 1.35;
     vertical-align: baseline;
     font-size: 0.9em;
-
     background-color: #D4D4D4;
-
     outline: none;
   }
 

@@ -42,7 +42,7 @@
     /**
      * Register a function to execute once loaded
      */
-    _this.onReady = function (funDoOnReady) {
+    this.onReady = function (funDoOnReady) {
       if (blReady) {
         funDoOnReady.call();
       } else {
@@ -53,11 +53,11 @@
     /**
      * Get an item from the content data
      */
-    _this.getItem = function (intItem) {
+    this.getItem = function (intItem) {
       return objContent[intItem];
     };
 
-    return _this;
+    return this;
   };
 
   /**
